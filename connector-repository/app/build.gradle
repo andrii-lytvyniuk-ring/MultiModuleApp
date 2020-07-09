@@ -29,20 +29,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    dynamicFeatures = [
-            ':connector-repository:login_adapter',
-            ':connector-repository:dashboard_adapter',
-            ':connector-repository:settings_adapter'
-    ]
 }
 
 dependencies {
     implementation project(path: ':base-repository:legacy-app')
     implementation project(path: ':base-repository:global-navigator')
 
+    implementation project(path: ':features:dashboard')
+    implementation project(path: ':features:login')
+    implementation project(path: ':features:settings')
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.1.0'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'com.google.android.material:material:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }

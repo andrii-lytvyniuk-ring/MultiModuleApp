@@ -2,9 +2,6 @@ include ':base-repository:global-navigator'
 include ':base-repository:legacy-app'
 
 include ':connector-repository:app'
-include ':connector-repository:settings_adapter'
-include ':connector-repository:dashboard_adapter'
-include ':connector-repository:login_adapter'
 
 include ':features:settings'
 include ':features:dashboard'
