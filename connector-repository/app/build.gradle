@@ -38,6 +38,7 @@ dependencies {
     implementation project(path: ':features:dashboard')
     implementation project(path: ':features:login')
     implementation project(path: ':features:settings')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.1.0'
