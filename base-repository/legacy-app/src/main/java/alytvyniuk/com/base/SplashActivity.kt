@@ -6,14 +6,19 @@ import android.app.Activity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import dagger.android.AndroidInjection
+import javax.inject.Inject
 
 private const val TAG = "SplashActivity"
 
 class SplashActivity : Activity() {
 
+    @Inject lateinit var legacyRepository: LegacyRepository
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(TAG, "Show SplashActivity")
+        AndroidInjection.inject(this)
+        Log.d(TAG, "Show SplashActivity ${legacyRepository.getCacheData()}")
         setContentView(R.layout.activity_splash)
         Handler().postDelayed(
             {

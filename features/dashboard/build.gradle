@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -28,6 +29,12 @@ dependencies {
     api project(path: ':base-repository:legacy-app')
     api project(path: ':base-repository:global-navigator')
     api 'androidx.appcompat:appcompat:1.1.0'
+
+    def dagger_version = "2.27"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    api "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+    api "com.google.dagger:dagger-android-support:$dagger_version"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.1.0'
