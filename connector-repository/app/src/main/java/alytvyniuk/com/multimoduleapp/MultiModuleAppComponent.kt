@@ -1,6 +1,7 @@
-package alytvyniuk.com.base.di
+package alytvyniuk.com.multimoduleapp
 
-import alytvyniuk.com.base.MainApplication
+import alytvyniuk.com.base.di.LegacyAndroidFrameworkModule
+import alytvyniuk.com.base.di.LegacyDiModule
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
@@ -14,8 +15,8 @@ import javax.inject.Singleton
         LegacyAndroidFrameworkModule::class
     ]
 )
-interface LegacyDiComponent: AndroidInjector<MainApplication> {
+interface MultiModuleAppComponent: AndroidInjector<MainApplication> {
 
     @Component.Factory
-    abstract class Factory : AndroidInjector.Factory<MainApplication>
+    abstract class Factory: AndroidInjector.Factory<MainApplication>
 }
