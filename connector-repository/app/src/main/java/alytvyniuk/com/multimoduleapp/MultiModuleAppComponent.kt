@@ -2,6 +2,7 @@ package alytvyniuk.com.multimoduleapp
 
 import alytvyniuk.com.base.LegacyRepository
 import alytvyniuk.com.base.di.LegacyAndroidFrameworkModule
+import alytvyniuk.com.base.di.LegacyDiComponent
 import alytvyniuk.com.base.di.LegacyDiModule
 import alytvyniuk.com.dashboard.di.DashboardAndroidFrameworkModule
 import alytvyniuk.com.dashboard.di.DashboardDiComponent
@@ -25,7 +26,7 @@ import javax.inject.Singleton
         DashboardAndroidFrameworkModule::class
     ]
 )
-interface MultiModuleAppComponent : AndroidInjector<MainApplication> {
+interface MultiModuleAppComponent : AndroidInjector<MainApplication>, LegacyDiComponent {
 
     @Component.Factory
     abstract class Factory : AndroidInjector.Factory<MainApplication>

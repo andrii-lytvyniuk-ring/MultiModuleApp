@@ -19,6 +19,7 @@ class SplashActivity : Activity() {
         super.onCreate(savedInstanceState)
         AndroidInjection.inject(this)
         Log.d(TAG, "Show SplashActivity ${legacyRepository.getCacheData()}")
+        val connectivityApi = ConnectivityApi(this)
         setContentView(R.layout.activity_splash)
         Handler().postDelayed(
             {
