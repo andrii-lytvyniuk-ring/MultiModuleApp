@@ -1,11 +1,11 @@
 package alytvyniuk.com.dashboard.di
 
+import alytvyniuk.com.dashboard.DashboardRepository
 import dagger.Subcomponent
-import javax.inject.Singleton
 
 @Subcomponent(
     modules = [
-        DashboardAndroidFrameworkModule::class
+        DashboardDiModule::class
     ]
 )
 interface DashboardDiComponent {

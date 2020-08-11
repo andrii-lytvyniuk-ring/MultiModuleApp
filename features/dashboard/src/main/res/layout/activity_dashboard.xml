@@ -21,6 +21,13 @@
         android:text="Go To Settings" />
 
     <Button
+        android:id="@+id/dashboardSecondaryButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Go To another Dashboard screen" />
+
+    <Button
         android:id="@+id/exitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

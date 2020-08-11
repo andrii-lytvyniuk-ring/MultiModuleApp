@@ -4,9 +4,11 @@ import alytvyniuk.com.base.LegacyRepository
 import alytvyniuk.com.navigator.Destination
 import alytvyniuk.com.navigator.GlobalNavigator
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import dagger.android.AndroidInjection
+import kotlinx.android.synthetic.main.activity_dashboard.dashboardSecondaryButton
 import kotlinx.android.synthetic.main.activity_dashboard.exitButton
 import kotlinx.android.synthetic.main.activity_dashboard.settingsButton
 import javax.inject.Inject
@@ -24,6 +26,9 @@ class DashboardActivity: Activity() {
         setContentView(R.layout.activity_dashboard)
         settingsButton.setOnClickListener {
             GlobalNavigator.navigate(this, Destination.Settings)
+        }
+        dashboardSecondaryButton.setOnClickListener {
+            startActivity(Intent(this, DashboardSecondaryActivity::class.java))
         }
         exitButton.setOnClickListener {
             finish()
