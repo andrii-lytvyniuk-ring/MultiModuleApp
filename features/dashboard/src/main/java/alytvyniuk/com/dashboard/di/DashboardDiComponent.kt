@@ -1,6 +1,7 @@
 package alytvyniuk.com.dashboard.di
 
 import alytvyniuk.com.dashboard.DashboardRepository
+import alytvyniuk.com.dashboard.DashboardSecondaryActivity
 import dagger.Subcomponent
 
 @Subcomponent(
@@ -10,9 +11,5 @@ import dagger.Subcomponent
 )
 interface DashboardDiComponent {
 
-    @Subcomponent.Factory
-    interface Factory {
-        fun create(): DashboardDiComponent
-    }
-
+    fun inject(dashboardSecondaryActivity: DashboardSecondaryActivity)
 }
