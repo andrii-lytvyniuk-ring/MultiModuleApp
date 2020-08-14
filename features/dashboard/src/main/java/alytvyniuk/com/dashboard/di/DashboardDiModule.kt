@@ -4,8 +4,8 @@ import alytvyniuk.com.dashboard.DashboardRepository
 import dagger.Module
 import dagger.Provides
 
-@Module
-class DashboardDiModule {
+@Module(subcomponents = [DashboardSecondaryActivitySubcomponent::class])
+internal class DashboardDiModule {
 
     @Provides
     fun provideDashboardRepository() : DashboardRepository {

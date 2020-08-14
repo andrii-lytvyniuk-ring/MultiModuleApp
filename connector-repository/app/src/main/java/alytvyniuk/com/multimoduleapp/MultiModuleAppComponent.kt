@@ -4,12 +4,8 @@ import alytvyniuk.com.base.LegacyRepository
 import alytvyniuk.com.base.di.LegacyAndroidFrameworkModule
 import alytvyniuk.com.base.di.LegacyDiComponent
 import alytvyniuk.com.base.di.LegacyDiModule
-import alytvyniuk.com.dashboard.di.DashboardAndroidFrameworkModule
-import alytvyniuk.com.dashboard.di.DashboardDiComponent
-import alytvyniuk.com.dashboard.di.DashboardDiModule
+import dagger.BindsInstance
 import dagger.Component
-import dagger.Module
-import dagger.Provides
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
 import javax.inject.Singleton
@@ -20,25 +16,16 @@ import javax.inject.Singleton
         AndroidInjectionModule::class,
 
         LegacyDiModule::class,
-        DashboardDiModule::class,
 
-        LegacyAndroidFrameworkModule::class,
-        DashboardAndroidFrameworkModule::class
+        LegacyAndroidFrameworkModule::class
     ]
 )
 interface MultiModuleAppComponent : AndroidInjector<MainApplication>, LegacyDiComponent {
 
+    fun provideLegacyRepository(): LegacyRepository
+
     @Component.Factory
-    abstract class Factory : AndroidInjector.Factory<MainApplication>
+    abstract class Factory  {
+        abstract fun create(@BindsInstance instance: MainApplication): MultiModuleAppComponent
+    }
 }
-
-//@Module(
-//    subcomponents = [
-//        LegacyDiComponent::class
-//    ]
-//)
-//class MultiModuleAppModule {
-//
-//
-//}
-

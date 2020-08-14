@@ -7,10 +7,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import dagger.android.AndroidInjection
-import kotlinx.android.synthetic.main.activity_dashboard.dashboardSecondaryButton
-import kotlinx.android.synthetic.main.activity_dashboard.exitButton
-import kotlinx.android.synthetic.main.activity_dashboard.settingsButton
+import kotlinx.android.synthetic.main.activity_dashboard.*
 import javax.inject.Inject
 
 private const val TAG = "DashboardActivity"
@@ -21,7 +18,7 @@ class DashboardActivity: Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AndroidInjection.inject(this)
+        DashboardFeature.component.inject(this)
         Log.d(TAG, "Show DashboardActivity ${legacyRepository.getCacheData()}")
         setContentView(R.layout.activity_dashboard)
         settingsButton.setOnClickListener {
